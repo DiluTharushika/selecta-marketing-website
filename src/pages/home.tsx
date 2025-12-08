@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import '../styles/home.css';
 
+
 type Category = {
   id: string;
   name: string;
@@ -201,9 +202,11 @@ const Home: React.FC = () => {
                 </div>
               ))}
             </div>
+           
           </div>
         </div>
       </section>
+  
     </div>
   );
 };
