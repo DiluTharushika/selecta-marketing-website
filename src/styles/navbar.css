@@ -1,0 +1,96 @@
+:root {
+  --purple: #6b21a8;
+  --purple-dark: #4c1d95;
+  --bg: #f5f5f8;
+  --text-dark: #2e1065;
+}
+
+.navbar {
+  background-color: #ffffff;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.navbar__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.navbar__logo img {
+  height: 40px;
+  display: block;
+}
+
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  font-size: 0.95rem;
+}
+
+.navbar__link {
+  text-decoration: none;
+  color: #4b5563;
+  position: relative;
+  padding-bottom: 0.2rem;
+}
+
+.navbar__link--active,
+.navbar__link:hover {
+  color: var(--purple-dark);
+}
+
+.navbar__link--active::after,
+.navbar__link:hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.2rem;
+  width: 100%;
+  height: 2px;
+  background: var(--purple);
+  border-radius: 999px;
+}
+
+.navbar__right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.navbar__icon-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+.navbar__cta {
+  border: none;
+  cursor: pointer;
+  padding: 0.55rem 1.4rem;
+  border-radius: 999px;
+  background: var(--purple);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: 0 8px 20px rgba(107, 33, 168, 0.35);
+}
+
+.navbar__cta:hover {
+  background: var(--purple-dark);
+}
+
+/* Simple responsive tweak */
+@media (max-width: 768px) {
+  .navbar__links {
+    display: none; /* we can make a mobile menu later */
+  }
+}
