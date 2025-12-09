@@ -1,0 +1,236 @@
+:root {
+  --selecta-purple: #663399;
+  --selecta-teal: #00a79d;
+  --selecta-orange: #fbb040;
+}
+
+/* Section layout */
+
+.testimonials {
+  padding: 3.2rem 1.5rem 3.8rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.testimonials__inner {
+  text-align: center;
+}
+
+/* Heading */
+
+.testimonials__eyebrow {
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--selecta-purple);
+  margin-bottom: 0.4rem;
+}
+
+.testimonials__title {
+  font-size: 1.7rem;
+  color: #1f2933;
+  margin: 0 0 2rem;
+}
+
+/* Card */
+
+.testimonials__card {
+  max-width: 640px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 1.2rem;
+  padding: 1.7rem 2rem 2rem;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+}
+
+/* soft brand glow */
+
+.testimonials__card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top left, rgba(102, 51, 153, 0.06), transparent 55%),
+    radial-gradient(circle at bottom right, rgba(0, 167, 157, 0.08), transparent 55%);
+  pointer-events: none;
+}
+
+/* Top row – profile and rating */
+
+.testimonials__card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 1.1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.testimonials__profile {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.testimonials__avatar {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: 3px solid var(--selecta-purple);
+  padding: 2px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.testimonials__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.testimonials__name {
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 0.1rem;
+}
+
+.testimonials__role {
+  margin: 0;
+  font-size: 0.82rem;
+  color: #6b7280;
+}
+
+/* Rating */
+
+.testimonials__rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.9rem;
+  color: var(--selecta-purple);
+}
+
+.testimonials__rating-star {
+  color: var(--selecta-orange);
+  font-size: 1rem;
+}
+
+.testimonials__rating-value {
+  font-weight: 600;
+}
+
+/* Quote */
+
+.testimonials__quote-wrapper {
+  position: relative;
+  padding: 0.3rem 0.2rem 0.5rem;
+  margin-bottom: 0.9rem;
+  z-index: 1;
+}
+
+.testimonials__quote {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #374151;
+  line-height: 1.6;
+}
+
+.testimonials__quote-mark {
+  position: absolute;
+  font-size: 2.4rem;
+  color: rgba(102, 51, 153, 0.16);
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+.testimonials__quote-mark--left {
+  top: -0.8rem;
+  left: -0.1rem;
+}
+
+.testimonials__quote-mark--right {
+  bottom: -1.4rem;
+  right: 0.2rem;
+}
+
+/* Product text */
+
+.testimonials__product {
+  margin: 0.4rem 0 1.4rem;
+  font-size: 0.85rem;
+  color: #4b5563;
+  position: relative;
+  z-index: 1;
+}
+
+.testimonials__product-label {
+  font-weight: 600;
+  color: var(--selecta-purple);
+}
+
+/* Dots */
+
+.testimonials__dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.35rem;
+  position: relative;
+  z-index: 1;
+}
+
+.testimonials__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background-color: rgba(148, 163, 184, 0.7);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.testimonials__dot--active {
+  width: 20px;
+  background: linear-gradient(
+    135deg,
+    var(--selecta-purple),
+    var(--selecta-teal)
+  );
+}
+
+/* Simple fade effect on change (applied to whole card content) */
+/* Tip: React doesn’t animate automatically, but this small trick helps cohesion */
+.testimonials__card {
+  animation: testimonials-fade 0.5s ease;
+}
+
+@keyframes testimonials-fade {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+
+@media (max-width: 640px) {
+  .testimonials__card {
+    padding: 1.4rem 1.3rem 1.7rem;
+  }
+
+  .testimonials__card-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .testimonials__rating {
+    align-self: flex-end;
+  }
+}
