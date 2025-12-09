@@ -18,7 +18,7 @@ const ContactH: React.FC = () => {
               {/* Google Maps iframe – you can replace src with your real map */}
               <iframe
                 title="Selecta Marketing location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d507872.1247052084!2d79.720093720586!3d6.927078526042943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae1730b6f9858f3%3A0x5e5d5f57139c0b0b!2sGalle!5e0!3m2!1sen!2slk!4v1700000000000!5m2!1sen!2slk"
+                src="https://maps.app.goo.gl/1H49surz24wLNrak6"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />

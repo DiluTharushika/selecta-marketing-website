@@ -26,7 +26,6 @@ const makeLoop = (items: Product[]) => [...items, ...items];
 const ProductsSection: React.FC = () => {
   const row1 = makeLoop(baseProducts);
   const row2 = makeLoop([...baseProducts].reverse());
-  const row3 = makeLoop(baseProducts);
 
   return (
     <section className="products">
@@ -37,7 +36,9 @@ const ProductsSection: React.FC = () => {
 
           <h2 className="products__heading">
             <span className="products__heading-main">SELECTA</span>
-            <span className="products__heading-sub">Professional Hardware Range</span>
+            <span className="products__heading-sub">
+              Professional Hardware Range
+            </span>
           </h2>
 
           <p className="products__description">
@@ -58,7 +59,7 @@ const ProductsSection: React.FC = () => {
           </button>
         </div>
 
-        {/* RIGHT SIDE – 3 separate moving rows */}
+        {/* RIGHT SIDE – 2 separate moving rows */}
         <div className="products__right">
           {/* Row 1 */}
           <div className="products-row products-row--slow">
@@ -78,28 +79,11 @@ const ProductsSection: React.FC = () => {
           </div>
 
           {/* Row 2 */}
-          <div className="products-row products-row--medium">
+          <div className="products-row products-row--fast">
             <div className="products-row__track">
               {row2.map((product, index) => (
                 <article
                   key={`${product.id}-r2-${index}`}
-                  className="products-card"
-                >
-                  <div className="products-card__image-wrapper">
-                    <img src={product.image} alt={product.name} />
-                  </div>
-                  <p className="products-card__name">{product.name}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-
-          {/* Row 3 */}
-          <div className="products-row products-row--fast">
-            <div className="products-row__track">
-              {row3.map((product, index) => (
-                <article
-                  key={`${product.id}-r3-${index}`}
                   className="products-card"
                 >
                   <div className="products-card__image-wrapper">
